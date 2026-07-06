@@ -1,13 +1,8 @@
 import { motion } from "framer-motion";
 import { WordsPullUp } from "./WordsPullUp";
 import { ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 
 export function Hero() {
-  const handleDummyClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    toast("tidak ada menu karna devloper malas membuat fitur");
-  };
 
   const handleScrollTo = (id: string) => (e: React.MouseEvent) => {
     e.preventDefault();
