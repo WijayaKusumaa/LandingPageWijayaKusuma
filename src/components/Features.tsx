@@ -31,7 +31,7 @@ export function Features() {
   const isInView = useInView(gridRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative min-h-screen bg-black px-4 py-20 md:py-32">
+    <section id="features" className="relative min-h-screen bg-black px-4 py-20 md:py-32">
       {/* Noise overlay */}
       <div className="absolute inset-0 bg-noise opacity-[0.15] pointer-events-none" />
 

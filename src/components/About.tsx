@@ -4,7 +4,7 @@ import { WordsPullUpMultiStyle } from "./WordsPullUpMultiStyle";
 import { ScrollRevealText } from "./ScrollRevealText";
 
 export function About() {
-  const [emblaRef] = useEmblaCarousel({ 
+  const [emblaRef] = useEmblaCarousel({
     loop: true,
     align: "center",
     skipSnaps: false
@@ -50,7 +50,7 @@ export function About() {
   ];
 
   return (
-    <section className="bg-black py-20 md:py-32 overflow-hidden relative w-full">
+    <section id="story" className="bg-black py-20 md:py-32 overflow-hidden relative w-full">
       {/* Elegant Blur/Fade Edges of the entire section */}
       <div className="absolute left-0 top-0 bottom-0 w-8 md:w-48 bg-gradient-to-r from-black via-black/85 to-transparent backdrop-blur-[3px] pointer-events-none z-10" />
       <div className="absolute right-0 top-0 bottom-0 w-8 md:w-48 bg-gradient-to-l from-black via-black/85 to-transparent backdrop-blur-[3px] pointer-events-none z-10" />
@@ -59,13 +59,13 @@ export function About() {
         <div className="overflow-hidden w-full" ref={emblaRef}>
           <div className="flex">
             {cards.map((card, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="w-[85vw] max-w-5xl shrink-0 px-3 md:px-6 flex justify-center"
               >
                 <motion.div
                   className="bg-[#101010] rounded-[2rem] p-8 md:p-16 lg:p-24 w-full flex flex-col items-center text-center select-none border border-white/5 cursor-grab active:cursor-grabbing"
-                  whileHover={{ 
+                  whileHover={{
                     y: -5,
                     borderColor: "rgba(222, 219, 200, 0.1)"
                   }}
@@ -74,7 +74,7 @@ export function About() {
                   <span className="text-primary text-[10px] sm:text-xs uppercase tracking-wider mb-8 md:mb-12">
                     {card.tag}
                   </span>
-                  
+
                   <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-3xl mx-auto leading-[0.95] sm:leading-[0.9] mb-12 md:mb-16">
                     <WordsPullUpMultiStyle segments={card.heading} />
                   </div>

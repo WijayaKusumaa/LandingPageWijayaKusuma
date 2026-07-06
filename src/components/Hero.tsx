@@ -9,17 +9,25 @@ export function Hero() {
     toast("tidak ada menu karna devloper malas membuat fitur");
   };
 
+  const handleScrollTo = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const handleJoinLabClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
   const navItems = [
-    { name: "Story", href: "#", onClick: handleDummyClick },
-    { name: "Tech Stack", href: "#", onClick: handleDummyClick },
-    { name: "Experiments", href: "#", onClick: handleDummyClick },
+    { name: "Story", href: "#story", onClick: handleScrollTo("story") },
+    { name: "Tech Stack", href: "#features", onClick: handleScrollTo("features") },
+    { name: "Experiments", href: "#features", onClick: handleScrollTo("features") },
     { name: "Open Source", href: "https://github.com/WijayaKusumaa", target: "_blank", rel: "noopener noreferrer" },
-    { name: "Contact", href: "https://www.instagram.com/wjkusuma_/", target: "_blank", rel: "noopener noreferrer" },
+    { name: "Contact", href: "https://www.instagram.com/haswaltch_/", target: "_blank", rel: "noopener noreferrer" },
   ];
 
   return (
@@ -63,7 +71,7 @@ export function Hero() {
         {/* Hero Content */}
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 lg:p-12 z-10">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 lg:items-end">
-            <motion.div 
+            <motion.div
               className="lg:col-span-8 origin-bottom-left cursor-default"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
